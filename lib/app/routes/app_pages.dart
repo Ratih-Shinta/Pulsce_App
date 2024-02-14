@@ -9,11 +9,6 @@ class AppPages {
   static const INITIAL = Routes.TODO_PAGE;
 
   static final routes = [
-    // GetPage(
-    //   name: _Paths.SPLASH_SCREEN,
-    //   page: () => SplashScreenView(),
-    //   binding: SplashScreenBinding(),
-    // ),
     GetPage(
       name: _Paths.TODO_PAGE,
       page: () => ToDoPageView(),

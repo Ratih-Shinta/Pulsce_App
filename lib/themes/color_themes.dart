@@ -4,7 +4,7 @@ const Color primaryColor = Color(0xFF4FA386);
 const Color secondaryColor = Color(0xFFFFEFD6);
 const Color accentColor = Color(0xFFFF9999);
 
-//TODO PAGE COLOR
+//todo page colors
 const Color todoPurpleColor = Color(0xFFA69FF0);
 const Color todoPinkColor = Color(0xFFE2A7A7);
 const Color todoBlueColor = Color(0xFF8FD5E5);

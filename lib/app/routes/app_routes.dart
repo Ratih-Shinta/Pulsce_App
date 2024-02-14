@@ -7,6 +7,7 @@ abstract class Routes {
 }
 
 abstract class _Paths {
+  _Paths._();
   static const SPLASH_SCREEN = '/splash-screen';
   static const TODO_PAGE = '/todo-page';
 }
