@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pulsce_app/themes/color_themes.dart';
-import 'package:pulsce_app/themes/default_themes.dart';
+import 'package:pulsce_app/service/themes/color_themes.dart';
+import 'package:pulsce_app/service/themes/default_themes.dart';
 
 TextStyle navbarTittleTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(12),
@@ -31,30 +31,31 @@ TextStyle timelineTodo = GoogleFonts.poppins(
 TextStyle chooseTimelineTodo = GoogleFonts.poppins(
     fontSize: figmaFontsize(12),
     fontWeight: FontWeight.w400,
-    color: transparentColor);
+    color: ColorResources.transparentColor
+ );
 
 TextStyle TittleTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(12),
   fontWeight: FontWeight.bold,
-  color: whiteColor,
+  color: ColorResources.whiteColor,
 );
 
 TextStyle deadlineTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(8),
   fontWeight: FontWeight.w500,
-  color: whiteColor,
+  color: ColorResources.whiteColor,
 );
 
 TextStyle SubTittleTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(11),
   fontWeight: FontWeight.w500,
-  color: whiteColor,
+  color: ColorResources.whiteColor,
 );
 
 TextStyle statusTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(10),
   fontWeight: FontWeight.w400,
-  color: whiteColor,
+  color: ColorResources.whiteColor,
 );
 
 TextStyle addTaskTodo = GoogleFonts.poppins(
