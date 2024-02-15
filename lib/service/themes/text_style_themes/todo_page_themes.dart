@@ -15,13 +15,34 @@ TextStyle navbarNameTodo = GoogleFonts.poppins(
 
 TextStyle searchTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(12),
-  fontWeight: FontWeight.w300,
+  fontWeight: FontWeight.w400,
+  color: Colors.grey,
 );
 
 TextStyle cheapTimelineTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(14),
   fontWeight: FontWeight.bold,
 );
+
+TextStyle DateTimelineTodo = GoogleFonts.poppins(
+  fontSize: figmaFontsize(14),
+  fontWeight: FontWeight.w600,
+  color: Colors.grey,
+);
+
+TextStyle MonthTimelineTodo = GoogleFonts.poppins(
+  fontSize: figmaFontsize(14),
+  fontWeight: FontWeight.w600,
+  color: Colors.grey,
+);
+
+TextStyle DayTimelineTodo = GoogleFonts.poppins(
+  fontSize: figmaFontsize(16),
+  fontWeight: FontWeight.w600,
+  color: Colors.grey,
+);
+
+
 
 TextStyle timelineTodo = GoogleFonts.poppins(
   fontSize: figmaFontsize(12),

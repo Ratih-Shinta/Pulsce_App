@@ -65,6 +65,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
+  date_picker_timeline:
+    dependency: "direct main"
+    description:
+      name: date_picker_timeline
+      sha256: d92956ddd6eb3070f5637b1514201342e739b6ed1ad830c365d64f9349f4f682
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.3"
+  date_picker_timeline_fixed:
+    dependency: "direct main"
+    description:
+      name: date_picker_timeline_fixed
+      sha256: d24eef4a53a0ced92bc9ce9d3325087ef441444abd9144dae7444a5642e77960
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   dbus:
     dependency: transitive
     description:
@@ -119,6 +135,7 @@ packages:
     source: hosted
     version: "7.0.0+1"
   flutter_svg:
+master
     dependency: "direct main"
     description:
       name: flutter_svg
@@ -128,19 +145,6 @@ packages:
     version: "2.0.9"
   flutter_test:
     dependency: "direct dev"
-    description: flutter
-    source: sdk
-    version: "0.0.0"
-  flutter_timezone:
-    dependency: "direct main"
-    description:
-      name: flutter_timezone
-      sha256: "06b35132c98fa188db3c4b654b7e1af7ccd01dfe12a004d58be423357605fb24"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.8"
-  flutter_web_plugins:
-    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -188,18 +192,10 @@ packages:
     dependency: "direct main"
     description:
       name: intl
-      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
       url: "https://pub.dev"
     source: hosted
-    version: "0.19.0"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: "4186c61b32f99e60f011f7160e32c89a758ae9b1d0c6d28e2c02ef0382300e2b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.0"
+    version: "0.17.0"
   matcher:
     dependency: transitive
     description:
