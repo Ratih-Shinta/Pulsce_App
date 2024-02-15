@@ -17,15 +17,15 @@ class SplashScreen extends StatelessWidget {
               top: MediaQuery.of(context).size.height * 0.3,
               left: MediaQuery.of(context).size.width * 0.25,
               right: MediaQuery.of(context).size.width * 0.25,
-              child: Image.asset(Images.splashLogo),
+              child: Image.asset(Images.logo2),
             ),
-            Positioned.fill(
-              top: null, 
-              child: Image.asset(
-                Images.splashanim,
-                fit: BoxFit.cover, 
-              ),
-            ),
+            // Positioned.fill(
+            //   top: null,
+            //   child: Image.asset(
+            //     Images.splashanim,
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
           ],
         ),
       ),
