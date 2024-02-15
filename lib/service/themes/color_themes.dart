@@ -6,6 +6,7 @@ class ColorResources {
   static const Color accentColor = Color(0xFFFF9999);
   static const Color transparentColor = Colors.transparent;
   static const Color whiteColor = Colors.white;
+  static const Color orangeColor = Color(0XFFFFEFD6);
 
 //todo page colors
   static const Color todoPurpleColor = Color(0xFFA69FF0);
