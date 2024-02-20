@@ -135,7 +135,6 @@ packages:
     source: hosted
     version: "7.0.0+1"
   flutter_svg:
-master
     dependency: "direct main"
     description:
       name: flutter_svg

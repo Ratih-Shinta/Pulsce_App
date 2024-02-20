@@ -1,8 +1,9 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:pulsce_app/app/pages/todo_page/controllers/todo_page_controller.dart';
+import 'package:pulsce_app/app/pages/todo_page/widgets/add_task_button_todo.dart';
+import 'package:pulsce_app/app/pages/todo_page/widgets/task_item_todo.dart';
 import 'package:pulsce_app/service/themes/color_themes.dart';
+import 'package:pulsce_app/service/themes/default_themes.dart';
 import 'package:pulsce_app/service/themes/text_style_themes/todo_page_themes.dart';
 
 class ToDoPageView extends StatefulWidget {
@@ -18,163 +19,123 @@ class _ToDoPageViewState extends State<ToDoPageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Welcome Back!", style: navbarTittleTodo),
-                    Text("Jessie Marino", style: navbarNameTodo),
-                    SizedBox(height: 10),
-                  ],
+      backgroundColor: ColorResources.primaryColor,
+      appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            color: ColorResources.primaryColor,
+          ),
+          padding: EdgeInsets.symmetric(horizontal: sizeWidth * 0.03),
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Welcome Back!", style: navbarTitleTodo),
+                Text("Jessie Marino", style: navbarNameTodo),
+              ],
+            ),
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: sizeWidth * 0.03),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: sizeWidth * 0.03),
+              decoration: BoxDecoration(
+                color: ColorResources.secondaryColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Search",
+                  hintStyle: searchTodo,
+                  border: InputBorder.none,
+                  icon: Icon(Icons.search, color: Colors.grey),
                 ),
               ),
-            ],
-          ),
-          Container(
-            width: 390,
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              color: ColorResources.whiteColor,
-              borderRadius: BorderRadius.circular(20),
             ),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Search",
-                hintStyle: searchTodo,
-                border: InputBorder.none,
-                icon: Icon(Icons.search, color: Colors.grey),
+            SizedBox(height: sizeHeight * 0.03),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Your Timeline",
+                  style: cheapTimelineTodo,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'June',
+                      style: timelineTodo,
+                    ),
+                    Icon(
+                      Icons.arrow_drop_down,
+                      color: ColorResources.blackColor,
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: sizeHeight * 0.01),
+            Container(
+              // color: ColorResources.secondaryColor,
+              child: DatePicker(
+                DateTime.now(),
+                height: sizeHeight * 0.1,
+                width: sizeWidth * 0.13,
+                initialSelectedDate: DateTime.now(),
+                selectionColor: ColorResources.accentColor,
+                selectedTextColor: ColorResources.primaryColor,
+                dateTextStyle: timelineTodo,
+                dayTextStyle: timelineTodo,
+                monthTextStyle: timelineTodo,
+                onDateChange: (date) {
+                  setState(() {
+                    _selectedValue = date;
+                  });
+                },
               ),
             ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            "Your Timeline",
-            style: timelineTodo,
-          ),
-          SizedBox(height: 10),
-          Container(
-            margin: const EdgeInsets.only(top: 20, left: 20),
-            child: DatePicker(
-              DateTime.now(),
-              height: 100,
-              width: 80,
-              initialSelectedDate: DateTime.now(),
-              selectionColor: ColorResources.primaryColor,
-              selectedTextColor: ColorResources.whiteColor,
-              dateTextStyle: DateTimelineTodo,
-              dayTextStyle: DayTimelineTodo,
-              monthTextStyle: MonthTimelineTodo,
-              onDateChange: (date) {
-                setState(() {
-                  _selectedValue = date;
-                });
-              },
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 20, left: 20),
-            child: Text(
-              "Selected Date: ${DateFormat('yyyy-MM-dd').format(_selectedValue)}",
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
-          Expanded(
-            child: Container(
+            // Container(
+            //   margin: const EdgeInsets.only(top: 20, left: 20),
+            //   child: Text(
+            //     "Selected Date: ${DateFormat('yyyy-MM-dd').format(_selectedValue)}",
+            //     style: TextStyle(fontSize: 16),
+            //   ),
+            // ),
+            SizedBox(height: sizeHeight * 0.04),
+            Expanded(
               child: Column(
-                children: <Widget>[
+                children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(20.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30.0),
-                          topRight: Radius.circular(30.0),
-                        ),
-                      ),
                       child: ListView(
-                        children: <Widget>[
-                          _buildTaskItem("Task 1"),
-                          _buildTaskItem("Task 2"),
+                        children: [
+                          TaskItemTodo(
+                            title: 'web DEV',
+                            subTitle:
+                                'We have to learn laravel and do the laravel task of creating CRUD and relate...',
+                          ),
+                          TaskItemTodo(
+                            title: 'Task 2',
+                            subTitle:
+                                'We have to learn laravel and do the laravel task of creating CRUD and relate...',
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  _buildAddTaskButton(), // Tambahkan tombol "Add Task" di sini
                 ],
               ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  _appBar() {
-    return AppBar(
-      title: Text("Task List"),
-      leading: GestureDetector(
-        onTap: () {
-          ToDoPageController().switchTheme();
-        },
-        child: Icon(Icons.nightlight_round, size: 20, color: Colors.white),
-      ),
-    );
-  }
-
-  Widget _buildTaskItem(String text) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 10.0),
-      padding: EdgeInsets.all(30.0),
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: 16.0,
+          ],
         ),
       ),
-    );
-  }
-
-  Widget _buildAddTaskButton() {
-    return Container(
-      margin: EdgeInsets.only(bottom: 20.0),
-      child: InkWell(
-        onTap: () {
-          // Tambahkan logika untuk menambahkan tugas baru di sini
-        },
-        child: Container(
-          margin: EdgeInsets.only(left: 300.0),
-          width: 50.0,
-          height: 50.0,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(0.0, 1.0),
-                blurRadius: 6.0,
-              ),
-            ],
-          ),
-          child: Center(
-            child: Icon(
-              Icons.add,
-              color: Colors.black,
-              size: 30.0,
-            ),
-          ),
-        ),
-      ),
+      floatingActionButton:
+          AddTaskButtonTodo(), // Tambahkan tombol "Add Task" di sini
     );
   }
 }
