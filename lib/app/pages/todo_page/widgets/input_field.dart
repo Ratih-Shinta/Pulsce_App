@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pulsce_app/service/themes/color_themes.dart';
 import 'package:pulsce_app/service/themes/text_style_themes/todo_page_themes.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -25,7 +26,7 @@ class CustomTextField extends StatelessWidget {
           Text(
             labelText,
             textAlign: TextAlign.left,
-            style: addTaskTittleTodo,
+            style: addTaskTitleTodo,
           ),
           SizedBox(height: 5),
           Stack(
@@ -33,11 +34,15 @@ class CustomTextField extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   hintText: hint,
+                  fillColor: ColorResources.whiteColor,
+                  filled: true,
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0), // Adjust horizontal padding here
+                  contentPadding: EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 10.0), // Adjust horizontal padding here
                   labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
@@ -49,7 +54,8 @@ class CustomTextField extends StatelessWidget {
                     padding: EdgeInsets.all(8),
                     child: Center(
                       child: Transform.translate(
-                        offset: Offset(4, 4), // Adjust the offset to center the icon
+                        offset: Offset(
+                            4, 4),
                         child: widget,
                       ),
                     ),
@@ -57,7 +63,10 @@ class CustomTextField extends StatelessWidget {
                 ),
             ],
           ),
-          SizedBox(height: 20, width: 10,),
+          SizedBox(
+            height: 20,
+            width: 10,
+          ),
         ],
       ),
     );

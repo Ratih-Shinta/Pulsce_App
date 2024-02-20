@@ -4,5 +4,5 @@ class Images {
   static const String onboardlogo1 = 'assets/image/onboard1.svg';
   static const String onboardlogo2 = 'assets/image/onboard2.svg';
   static const String onboardlogo3 = 'assets/image/onboard3.svg';
-  static const String logo2 = 'assets/image/logo2.png';
+  static const String logo2 = 'assets/images/logo.png';
 }

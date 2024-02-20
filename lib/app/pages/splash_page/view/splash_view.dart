@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pulsce_app/app/pages/splash_page/controller/splash_controller.dart';
 import 'package:pulsce_app/service/themes/color_themes.dart';
 import 'package:pulsce_app/service/themes/image_themes.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends GetView<SplashController> {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
@@ -10,7 +12,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         alignment: Alignment.bottomCenter,
-        color: ColorResources.orangeColor         ,
+        color: ColorResources.orangeColor,
         child: Stack(
           children: [
             Positioned(
@@ -19,13 +21,13 @@ class SplashScreen extends StatelessWidget {
               right: MediaQuery.of(context).size.width * 0.25,
               child: Image.asset(Images.logo2),
             ),
-            // Positioned.fill(
-            //   top: null,
-            //   child: Image.asset(
-            //     Images.splashanim,
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
+            Positioned.fill(
+              top: null,
+              child: Image.asset(
+                Images.splashanim,
+                fit: BoxFit.cover,
+              ),
+            ),
           ],
         ),
       ),
