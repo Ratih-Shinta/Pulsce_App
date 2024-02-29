@@ -7,13 +7,14 @@ class CustomTextField extends StatelessWidget {
   final String? hint;
   final bool showWidget;
   final Widget? widget;
+  final TextEditingController controller;
 
   const CustomTextField({
     Key? key,
     required this.labelText,
     this.hint,
     this.showWidget = true,
-    this.widget,
+    this.widget, required this.controller,
   }) : super(key: key);
 
   @override
@@ -32,6 +33,7 @@ class CustomTextField extends StatelessWidget {
           Stack(
             children: [
               TextField(
+                controller: controller,
                 decoration: InputDecoration(
                   hintText: hint,
                   fillColor: ColorResources.whiteColor,
