@@ -26,7 +26,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ADD_TASK_TODO_PAGE,
-      page: () => InputToDo(),
+      page: () => InputTodo(),
       transition: Transition.fadeIn,
       binding: ToDoPageBinding(),
     )
